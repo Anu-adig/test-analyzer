@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  frontend:
+    image: python:3.11-slim
+    working_dir: /usr/src/app/frontend
+    command: sh -c "python -m http.server 8080"
+    volumes:
+      - ./frontend:/usr/src/app/frontend:ro
+    ports:
+      - "8080:8080"
